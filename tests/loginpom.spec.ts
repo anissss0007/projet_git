@@ -9,7 +9,7 @@ lp=new loginpom(page);
 
 });
 
-test ("loginWithPom",{tag:"@regression"},async({page})=>
+test ("loginWithPom",{tag:["@regression","@smoke","@endtoend"]},async({page})=>
 {
 
     await lp.saisirUsername("standard_user")
