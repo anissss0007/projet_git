@@ -25,10 +25,10 @@ pipeline {
             steps {
                 script {
                     if (params.list == true) {
-                        sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
-                    } else {
-                        sh "npx playwright test --project=${params.navigateur}"
-                    }
+                        //sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
+                        sh "npx playwright test"
+
+                    } 
                 }
             }
         }
