@@ -22,12 +22,15 @@ pipeline {
         }
         stage('lancer les test'){
           steps{
-            if (params.runwithtags==true){
+            script{
+                if (params.runwithtags==true){
                 sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
+                }
+                else {
+                    sh "npx playwright test --project=${params.navigateur}"
+                }
             }
-            else {
-                sh "npx playwright test --project=${params.navigateur}"
-            }
+          
 
          }
         }
