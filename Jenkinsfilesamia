@@ -20,7 +20,7 @@ pipeline {
             sh 'npm install'
           }
         }
-        stage('lancer les test')
+        stage('lancer les test'){
           steps{
             if (params.runwithtags==true){
                 sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
@@ -29,9 +29,10 @@ pipeline {
                 sh "npx playwright test --project=${params.navigateur}"
             }
 
+         }
         }
-
-        
     }
+        
+    
 
 }
