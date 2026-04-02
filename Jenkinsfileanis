@@ -8,6 +8,8 @@ pipeline {
 
     parameters {
         booleanParam(name: 'list', defaultValue: true, description: 'lancer un tag ou non')
+        booleanParam(name: 'alltests', defaultValue: true, description: 'lancer tt les tests')
+
 
         choice(name: 'tags', choices: ['@smoke', '@regression', '@endtoend'], description: 'veuillez choisir un tag')
 
@@ -24,9 +26,14 @@ pipeline {
         stage('lancer le test') {
             steps {
                 script {
-                    if (params.list == true) {
+                    if (params.alltests == true) {
                         //sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
                         sh "npx playwright test"
+
+                    } 
+
+                     else  {
+                        sh "npx playwright test --grep ${params.tags} --project=${params.navigateur}"
 
                     } 
                 }
