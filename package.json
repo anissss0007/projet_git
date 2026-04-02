@@ -21,8 +21,11 @@
     "@types/node": "^25.5.0",
     "allure-commandline": "^2.38.1",
     "allure-playwright": "^3.6.0"
+<<<<<<< HEAD
   },
   "dependencies": {
     "allure": "^0.0.0"
+=======
+>>>>>>> 6f26ac316235a296f3c6a0c92408fe43e6475ec1
   }
 }
